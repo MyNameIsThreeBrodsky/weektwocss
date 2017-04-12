@@ -1,0 +1,94 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.controls{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 200px;
+  margin: 0 1em 1rem;
+  border: 1px solid #666;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: lightblue;
+}
+
+.controls button {
+  font-size: 1rem;
+
+}
+
+.block {
+  height: 200px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  color: black;
+  font-size: 2rem;
+  font-weight: lighter;
+  letter-spacing: .10em;
+  font-family: sans-serif;
+  position: relative;
+  top: 0;
+  border:1px solid black;
+  border-radius: 8px;
+  box-shadow: 14px 14px 4px rgba(0,0,0,0.5);
+  /*transition: all .5s ease;*/
+  transition: box-shadow .5s ease, top .5s linear, transform .3s ease-in;
+}
+
+.block:hover {
+  box-shadow: 7px 7px 4px rgba(0,0,0,0.5);
+  top: -7px;
+  cursor: pointer;
+}
+
+.Rotate{
+  transform: rotate(20deg);
+}
+
+.Slide {
+  transform: translate(100px, 150px);
+}
+
+.Skew {
+  transform: skew(30deg, 30deg);
+}
+/* look in MDN for keyframe animation to remember how to do this*/
+.grow {
+  -webkit-animation-name:embiggen;
+  animation-name: embiggen;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  -webkit-animation-interaction-count:infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animatin-direction: alternate;
+  anmimation-timing-function: ease-in;
+}
+
+@keyframes embiggen{
+  0% {
+    transform: scale(1)rotate(0deg);
+  }
+  30% {
+    transform: scale(1.6)rotate(10deg);
+  }
+  65% {
+    transform: scale(3)rotate(15deg);
+  }
+  100% {
+    transform: scale(3)rotate(15deg);
+  }
+}
